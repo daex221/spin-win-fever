@@ -5,35 +5,32 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Sparkles, Loader2 } from "lucide-react";
 
 interface WaitlistFormProps {
-  onSuccess: (data: { name: string; contactType: string; contactValue: string }) => void;
+  onSuccess: (data: { name: string; email: string; phone: string }) => void;
 }
 
 const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
-  const [contactType, setContactType] = useState<"email" | "phone">("email");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{ name?: string; contact?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string }>({});
   const { toast } = useToast();
 
   const validateForm = () => {
-    const newErrors: { name?: string; contact?: string } = {};
+    const newErrors: { name?: string; email?: string; phone?: string } = {};
 
     if (!name || name.length < 2) {
       newErrors.name = "Name must be at least 2 characters";
     }
 
-    if (contactType === "email") {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email || !emailRegex.test(email)) {
-        newErrors.contact = "Please enter a valid email address";
-      }
-    } else {
-      const phoneRegex = /^\+?[\d\s\-\(\)]{10,}$/;
-      if (!phone || !phoneRegex.test(phone)) {
-        newErrors.contact = "Please enter a valid phone number (min 10 digits)";
-      }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    const phoneRegex = /^\+?[\d\s\-\(\)]{10,}$/;
+    if (!phone || !phoneRegex.test(phone)) {
+      newErrors.phone = "Please enter a valid phone number (min 10 digits)";
     }
 
     setErrors(newErrors);
@@ -52,11 +49,10 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
 
     setIsSubmitting(true);
 
-    const contactValue = contactType === "email" ? email : phone;
     const data = {
       name,
-      contact_type: contactType,
-      contact_value: contactValue,
+      email,
+      phone,
       campaign: "spin_week_launch",
       source: "waitlist_page",
       timestamp: new Date().toISOString(),
@@ -80,7 +76,7 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
         throw new Error("Submission failed");
       }
 
-      onSuccess({ name, contactType, contactValue });
+      onSuccess({ name, email, phone });
     } catch (error) {
       toast({
         title: "⚠️ Oops! Something went wrong",
@@ -100,33 +96,6 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
       onSubmit={handleSubmit}
       className="w-full max-w-lg mx-auto p-8 rounded-2xl bg-card/90 backdrop-blur-xl border-4 animate-rainbow-border shadow-[0_0_50px_rgba(139,92,246,0.3)]"
     >
-      <div className="flex gap-2 mb-6">
-        <Button
-          type="button"
-          onClick={() => setContactType("email")}
-          className={`flex-1 h-12 text-lg font-bold transition-all ${
-            contactType === "email"
-              ? "bg-neon-cyan text-background shadow-[0_0_20px_rgba(0,255,255,0.6)]"
-              : "bg-muted text-muted-foreground"
-          }`}
-        >
-          <Mail className="mr-2 h-5 w-5" />
-          EMAIL
-        </Button>
-        <Button
-          type="button"
-          onClick={() => setContactType("phone")}
-          className={`flex-1 h-12 text-lg font-bold transition-all ${
-            contactType === "phone"
-              ? "bg-neon-magenta text-foreground shadow-[0_0_20px_rgba(236,72,153,0.6)]"
-              : "bg-muted text-muted-foreground"
-          }`}
-        >
-          <Phone className="mr-2 h-5 w-5" />
-          PHONE
-        </Button>
-      </div>
-
       <div className="space-y-6">
         <div>
           <div className="relative">
@@ -149,49 +118,47 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
           )}
         </div>
 
-        {contactType === "email" ? (
-          <div>
-            <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neon-cyan" />
-              <Input
-                type="email"
-                placeholder="creator@example.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setErrors({ ...errors, contact: undefined });
-                }}
-                className={`pl-12 h-14 text-lg bg-background border-2 focus:border-neon-cyan focus:shadow-[0_0_20px_rgba(0,255,255,0.4)] ${
-                  errors.contact ? "border-destructive" : ""
-                }`}
-              />
-            </div>
-            {errors.contact && (
-              <p className="mt-2 text-sm text-destructive animate-shake">{errors.contact}</p>
-            )}
+        <div>
+          <div className="relative">
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neon-cyan" />
+            <Input
+              type="email"
+              placeholder="creator@example.com"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setErrors({ ...errors, email: undefined });
+              }}
+              className={`pl-12 h-14 text-lg bg-background border-2 focus:border-neon-cyan focus:shadow-[0_0_20px_rgba(0,255,255,0.4)] ${
+                errors.email ? "border-destructive" : ""
+              }`}
+            />
           </div>
-        ) : (
-          <div>
-            <div className="relative">
-              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neon-magenta" />
-              <Input
-                type="tel"
-                placeholder="+1 (555) 000-0000"
-                value={phone}
-                onChange={(e) => {
-                  setPhone(e.target.value);
-                  setErrors({ ...errors, contact: undefined });
-                }}
-                className={`pl-12 h-14 text-lg bg-background border-2 focus:border-neon-magenta focus:shadow-[0_0_20px_rgba(236,72,153,0.4)] ${
-                  errors.contact ? "border-destructive" : ""
-                }`}
-              />
-            </div>
-            {errors.contact && (
-              <p className="mt-2 text-sm text-destructive animate-shake">{errors.contact}</p>
-            )}
+          {errors.email && (
+            <p className="mt-2 text-sm text-destructive animate-shake">{errors.email}</p>
+          )}
+        </div>
+
+        <div>
+          <div className="relative">
+            <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neon-magenta" />
+            <Input
+              type="tel"
+              placeholder="+1 (555) 000-0000"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+                setErrors({ ...errors, phone: undefined });
+              }}
+              className={`pl-12 h-14 text-lg bg-background border-2 focus:border-neon-magenta focus:shadow-[0_0_20px_rgba(236,72,153,0.4)] ${
+                errors.phone ? "border-destructive" : ""
+              }`}
+            />
           </div>
-        )}
+          {errors.phone && (
+            <p className="mt-2 text-sm text-destructive animate-shake">{errors.phone}</p>
+          )}
+        </div>
 
         <Button
           type="submit"

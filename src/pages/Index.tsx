@@ -7,15 +7,15 @@ import SuccessState from "@/components/SuccessState";
 
 const Index = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [userData, setUserData] = useState({ name: "", contactType: "", contactValue: "" });
+  const [userData, setUserData] = useState({ name: "", email: "", phone: "" });
 
-  const handleSuccess = (data: { name: string; contactType: string; contactValue: string }) => {
+  const handleSuccess = (data: { name: string; email: string; phone: string }) => {
     setUserData(data);
     setSubmitted(true);
   };
 
   if (submitted) {
-    return <SuccessState name={userData.name} contactType={userData.contactType} contactValue={userData.contactValue} />;
+    return <SuccessState name={userData.name} email={userData.email} phone={userData.phone} />;
   }
 
   return (
@@ -43,7 +43,7 @@ const Index = () => {
             Be First to Play & Win Big
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-2" style={{ animationDelay: "0.4s" }}>
-            Enter your email or phone number to get your{" "}
+            Enter your name, email, and phone number to get your{" "}
             <span className="text-neon-gold font-bold">FREE SPIN CODE</span> the moment we launch.
           </p>
         </div>

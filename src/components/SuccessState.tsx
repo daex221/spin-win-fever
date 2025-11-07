@@ -5,11 +5,11 @@ import CountdownTimer from "./CountdownTimer";
 
 interface SuccessStateProps {
   name: string;
-  contactType: string;
-  contactValue: string;
+  email: string;
+  phone: string;
 }
 
-const SuccessState = ({ name, contactType, contactValue }: SuccessStateProps) => {
+const SuccessState = ({ name, email, phone }: SuccessStateProps) => {
   useEffect(() => {
     // Create confetti effect
     const confettiColors = ["#FFD700", "#00FFFF", "#EC4899", "#8B5CF6", "#3B82F6"];
@@ -47,10 +47,10 @@ const SuccessState = ({ name, contactType, contactValue }: SuccessStateProps) =>
             🎉 YOU'RE IN, {name.toUpperCase()}!
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-neon-cyan font-bold">
-            Your FREE SPIN CODE will be sent to {contactType === "email" ? "your email" : "your phone"} the moment SPIN WEEK launches!
+            Your FREE SPIN CODE will be sent to your email and phone the moment SPIN WEEK launches!
           </p>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-            Check your {contactType === "email" ? `email at ${contactValue}` : `phone at ${contactValue}`} when the countdown hits zero! 📲
+            Check <span className="text-neon-cyan font-bold">{email}</span> and <span className="text-neon-magenta font-bold">{phone}</span> when the countdown hits zero! 📲
           </p>
         </div>
 
