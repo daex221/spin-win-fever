@@ -33,16 +33,16 @@ const Index = () => {
       <FloatingParticles />
 
       {/* Main content */}
-      <div className="relative z-10 container mx-auto px-4 py-8 md:py-16">
+      <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 lg:py-16">
         {/* Hero section */}
-        <div className="text-center space-y-6 mb-12 animate-bounce-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan animate-glow-pulse">
+        <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12 animate-bounce-in">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan animate-glow-pulse leading-tight">
             SPIN WEEK IS COMING 🔥
           </h1>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neon-cyan animate-glow-pulse" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neon-cyan animate-glow-pulse" style={{ animationDelay: "0.2s" }}>
             Be First to Play & Win Big
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto" style={{ animationDelay: "0.4s" }}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-2" style={{ animationDelay: "0.4s" }}>
             Enter your email or phone number to get your{" "}
             <span className="text-neon-gold font-bold">FREE SPIN CODE</span> the moment we launch.
           </p>
@@ -60,32 +60,32 @@ const Index = () => {
         <LiveTicker />
 
         {/* Social proof badges */}
-        <div className="flex flex-wrap justify-center gap-4 mt-12 animate-bounce-in" style={{ animationDelay: "0.8s" }}>
-          <div className="px-6 py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-sm md:text-base animate-glow-pulse">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-12 animate-bounce-in px-2" style={{ animationDelay: "0.8s" }}>
+          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
             🎁 100% FREE
           </div>
-          <div className="px-6 py-3 bg-neon-cyan/20 border-2 border-neon-cyan rounded-full text-neon-cyan font-bold text-sm md:text-base animate-glow-pulse">
+          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-cyan/20 border-2 border-neon-cyan rounded-full text-neon-cyan font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
             ⚡ INSTANT ACCESS
           </div>
-          <div className="px-6 py-3 bg-neon-magenta/20 border-2 border-neon-magenta rounded-full text-neon-magenta font-bold text-sm md:text-base animate-glow-pulse">
+          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-magenta/20 border-2 border-neon-magenta rounded-full text-neon-magenta font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
             🎯 LIMITED SPOTS
           </div>
         </div>
 
         {/* Urgency message */}
-        <div className="text-center mt-12">
-          <p className="text-xl md:text-2xl text-neon-red font-bold animate-glow-pulse">
+        <div className="text-center mt-8 md:mt-12 px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-neon-red font-bold animate-glow-pulse">
             ⏰ Early access closes when the countdown hits zero
           </p>
         </div>
 
         {/* Fake progress bar */}
-        <div className="max-w-2xl mx-auto mt-8">
+        <div className="max-w-2xl mx-auto mt-6 md:mt-8 px-4">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-bold text-gray-400">Waitlist Progress:</span>
-            <span className="text-sm font-bold text-neon-gold">78% FULL</span>
+            <span className="text-xs sm:text-sm font-bold text-gray-400">Waitlist Progress:</span>
+            <span className="text-xs sm:text-sm font-bold text-neon-gold">78% FULL</span>
           </div>
-          <div className="h-3 bg-muted rounded-full overflow-hidden">
+          <div className="h-2 md:h-3 bg-muted rounded-full overflow-hidden">
             <div className="h-full w-[78%] bg-gradient-to-r from-neon-gold to-neon-red animate-glow-pulse" />
           </div>
         </div>

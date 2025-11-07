@@ -51,32 +51,32 @@ const CountdownTimer = () => {
   const TimeSegment = ({ value, label, shouldFlip }: { value: number; label: string; shouldFlip: boolean }) => (
     <div className="flex flex-col items-center">
       <div
-        className={`relative bg-gradient-to-br from-neon-gold to-neon-red rounded-xl p-6 shadow-[0_0_30px_rgba(255,215,0,0.4)] ${
+        className={`relative bg-gradient-to-br from-neon-gold to-neon-red rounded-lg md:rounded-xl p-3 md:p-6 shadow-[0_0_30px_rgba(255,215,0,0.4)] ${
           shouldFlip ? "animate-flip" : ""
         }`}
       >
-        <div className="text-5xl md:text-6xl font-black text-background">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-background">
           {value.toString().padStart(2, "0")}
         </div>
       </div>
-      <div className="mt-2 text-xs md:text-sm uppercase tracking-widest text-muted-foreground font-bold">
+      <div className="mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider md:tracking-widest text-muted-foreground font-bold">
         {label}
       </div>
     </div>
   );
 
   return (
-    <div className="mb-12 animate-bounce-in">
-      <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-neon-cyan animate-glow-pulse">
+    <div className="mb-8 md:mb-12 animate-bounce-in">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 text-neon-cyan animate-glow-pulse">
         The Wheel Goes Live In:
       </h3>
-      <div className="flex justify-center items-center gap-3 md:gap-6">
+      <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-6">
         <TimeSegment value={timeLeft.days} label="DAYS" shouldFlip={prevTime.days !== timeLeft.days} />
-        <div className="text-4xl md:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
         <TimeSegment value={timeLeft.hours} label="HOURS" shouldFlip={prevTime.hours !== timeLeft.hours} />
-        <div className="text-4xl md:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
         <TimeSegment value={timeLeft.minutes} label="MINUTES" shouldFlip={prevTime.minutes !== timeLeft.minutes} />
-        <div className="text-4xl md:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-neon-gold font-black animate-glow-pulse">:</div>
         <TimeSegment value={timeLeft.seconds} label="SECONDS" shouldFlip={prevTime.seconds !== timeLeft.seconds} />
       </div>
     </div>

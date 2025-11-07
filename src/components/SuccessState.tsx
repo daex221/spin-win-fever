@@ -35,63 +35,63 @@ const SuccessState = ({ name, contactType, contactValue }: SuccessStateProps) =>
   const shareUrl = encodeURIComponent(window.location.href);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-2xl mx-auto text-center space-y-8 animate-bounce-in">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 py-8">
+      <div className="w-full max-w-2xl mx-auto text-center space-y-6 md:space-y-8 animate-bounce-in">
         <div className="relative">
-          <CheckCircle className="w-32 h-32 mx-auto text-neon-green animate-glow-pulse" />
+          <CheckCircle className="w-24 h-24 md:w-32 md:h-32 mx-auto text-neon-green animate-glow-pulse" />
           <div className="absolute inset-0 bg-neon-green/20 rounded-full blur-3xl" />
         </div>
 
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-black text-foreground animate-glow-pulse">
+        <div className="space-y-3 md:space-y-4 px-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-foreground animate-glow-pulse leading-tight">
             🎉 YOU'RE IN, {name.toUpperCase()}!
           </h1>
-          <p className="text-xl md:text-3xl text-neon-cyan font-bold">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-neon-cyan font-bold">
             Your FREE SPIN CODE will be sent to {contactType === "email" ? "your email" : "your phone"} the moment SPIN WEEK launches!
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
             Check your {contactType === "email" ? `email at ${contactValue}` : `phone at ${contactValue}`} when the countdown hits zero! 📲
           </p>
         </div>
 
-        <div className="py-8">
+        <div className="py-6 md:py-8">
           <CountdownTimer />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-2">
           <Button
             asChild
-            className="h-14 px-8 text-lg font-bold bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition-all shadow-[0_0_20px_rgba(236,72,153,0.5)]"
+            className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-bold bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition-all shadow-[0_0_20px_rgba(236,72,153,0.5)]"
           >
             <a
               href={`https://www.instagram.com/stories/create/?text=${shareText}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Instagram className="mr-2 h-5 w-5" />
+              <Instagram className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               Share on Instagram
             </a>
           </Button>
           <Button
             asChild
-            className="h-14 px-8 text-lg font-bold bg-gradient-to-r from-blue-400 to-blue-600 hover:scale-105 transition-all shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+            className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 text-base md:text-lg font-bold bg-gradient-to-r from-blue-400 to-blue-600 hover:scale-105 transition-all shadow-[0_0_20px_rgba(59,130,246,0.5)]"
           >
             <a
               href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter className="mr-2 h-5 w-5" />
+              <Twitter className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               Share on Twitter
             </a>
           </Button>
         </div>
 
-        <div className="pt-8 space-y-3">
-          <div className="inline-block px-6 py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-sm animate-glow-pulse">
+        <div className="pt-6 md:pt-8 space-y-2 md:space-y-3">
+          <div className="inline-block px-4 md:px-6 py-2 md:py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-xs md:text-sm animate-glow-pulse">
             EXCLUSIVE LAUNCH EVENT
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs md:text-sm text-muted-foreground">
             Get ready to spin and win big! 🎰✨
           </p>
         </div>
