@@ -1,0 +1,103 @@
+import { useEffect } from "react";
+import { CheckCircle, Instagram, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import CountdownTimer from "./CountdownTimer";
+
+interface SuccessStateProps {
+  name: string;
+  contactType: string;
+  contactValue: string;
+}
+
+const SuccessState = ({ name, contactType, contactValue }: SuccessStateProps) => {
+  useEffect(() => {
+    // Create confetti effect
+    const confettiColors = ["#FFD700", "#00FFFF", "#EC4899", "#8B5CF6", "#3B82F6"];
+    const confettiCount = 50;
+
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "absolute animate-confetti";
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.top = "50%";
+      confetti.style.width = "10px";
+      confetti.style.height = "10px";
+      confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+      confetti.style.animationDuration = `${Math.random() * 2 + 2}s`;
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 4000);
+    }
+  }, []);
+
+  const shareText = encodeURIComponent("I just joined SPIN WEEK by Supporters Win! 🎰 Join me for free spins and big wins!");
+  const shareUrl = encodeURIComponent(window.location.href);
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="w-full max-w-2xl mx-auto text-center space-y-8 animate-bounce-in">
+        <div className="relative">
+          <CheckCircle className="w-32 h-32 mx-auto text-neon-green animate-glow-pulse" />
+          <div className="absolute inset-0 bg-neon-green/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-black text-foreground animate-glow-pulse">
+            🎉 YOU'RE IN, {name.toUpperCase()}!
+          </h1>
+          <p className="text-xl md:text-3xl text-neon-cyan font-bold">
+            Your FREE SPIN CODE will be sent to {contactType === "email" ? "your email" : "your phone"} the moment SPIN WEEK launches!
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Check your {contactType === "email" ? `email at ${contactValue}` : `phone at ${contactValue}`} when the countdown hits zero! 📲
+          </p>
+        </div>
+
+        <div className="py-8">
+          <CountdownTimer />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button
+            asChild
+            className="h-14 px-8 text-lg font-bold bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-105 transition-all shadow-[0_0_20px_rgba(236,72,153,0.5)]"
+          >
+            <a
+              href={`https://www.instagram.com/stories/create/?text=${shareText}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="mr-2 h-5 w-5" />
+              Share on Instagram
+            </a>
+          </Button>
+          <Button
+            asChild
+            className="h-14 px-8 text-lg font-bold bg-gradient-to-r from-blue-400 to-blue-600 hover:scale-105 transition-all shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+          >
+            <a
+              href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter className="mr-2 h-5 w-5" />
+              Share on Twitter
+            </a>
+          </Button>
+        </div>
+
+        <div className="pt-8 space-y-3">
+          <div className="inline-block px-6 py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-sm animate-glow-pulse">
+            EXCLUSIVE LAUNCH EVENT
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Get ready to spin and win big! 🎰✨
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SuccessState;
