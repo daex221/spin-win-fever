@@ -108,7 +108,7 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
                 setName(e.target.value);
                 setErrors({ ...errors, name: undefined });
               }}
-              className={`pl-12 h-14 text-lg bg-background !text-white border-2 focus:border-neon-gold focus:shadow-[0_0_20px_rgba(255,215,0,0.4)] ${
+              className={`pl-12 h-14 text-lg bg-background !text-black border-2 focus:border-neon-gold focus:shadow-[0_0_20px_rgba(255,215,0,0.4)] ${
                 errors.name ? "border-destructive" : ""
               }`}
             />
@@ -129,7 +129,7 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
                 setEmail(e.target.value);
                 setErrors({ ...errors, email: undefined });
               }}
-              className={`pl-12 h-14 text-lg bg-background !text-white border-2 focus:border-neon-cyan focus:shadow-[0_0_20px_rgba(0,255,255,0.4)] ${
+              className={`pl-12 h-14 text-lg bg-background !text-black border-2 focus:border-neon-cyan focus:shadow-[0_0_20px_rgba(0,255,255,0.4)] ${
                 errors.email ? "border-destructive" : ""
               }`}
             />
@@ -150,7 +150,7 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
                 setPhone(e.target.value);
                 setErrors({ ...errors, phone: undefined });
               }}
-              className={`pl-12 h-14 text-lg bg-background !text-white border-2 focus:border-neon-magenta focus:shadow-[0_0_20px_rgba(236,72,153,0.4)] ${
+              className={`pl-12 h-14 text-lg bg-background !text-black border-2 focus:border-neon-magenta focus:shadow-[0_0_20px_rgba(236,72,153,0.4)] ${
                 errors.phone ? "border-destructive" : ""
               }`}
             />
