@@ -34,15 +34,30 @@ const Index = () => {
 
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 lg:py-16">
+        {/* Brand Logo */}
+        <div className="text-center mb-6 md:mb-8 animate-bounce-in">
+          <div className="inline-block relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-50 blur-2xl group-hover:blur-3xl transition-all duration-500 animate-glow-pulse" />
+            <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta animate-glow-pulse">
+              SUPPORTERS WIN
+            </h1>
+            <p className="relative text-xs sm:text-sm text-gray-400 mt-2 tracking-widest">POWERED BY SUPPORTERS WIN™️</p>
+          </div>
+        </div>
+
         {/* Hero section */}
-        <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12 animate-bounce-in">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan animate-glow-pulse leading-tight">
-            SPIN WEEK IS COMING 🔥
-          </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neon-cyan animate-glow-pulse" style={{ animationDelay: "0.2s" }}>
-            Be First to Play & Win Big
+        <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12 animate-bounce-in" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan animate-glow-pulse leading-tight">
+            SPIN WEEK IS COMING 🔥<br />
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Win Cash, Prizes & Exclusive Creator Perks!</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-2" style={{ animationDelay: "0.4s" }}>
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neon-cyan animate-glow-pulse" style={{ animationDelay: "0.2s" }}>
+            Be First to Play & Win Big
+          </h3>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-2" style={{ animationDelay: "0.3s" }}>
+            Get early access to the Spin Wheel before public launch — earn bonuses, prizes, and exclusive creator tools.
+          </p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-2 mt-3" style={{ animationDelay: "0.4s" }}>
             Enter your name, email, and phone number to get your{" "}
             <span className="text-neon-gold font-bold">FREE SPIN CODE</span> the moment we launch.
           </p>
@@ -52,8 +67,16 @@ const Index = () => {
         <CountdownTimer />
 
         {/* Waitlist form */}
-        <div className="mb-8 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
+        <div className="mb-4 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
           <WaitlistForm onSuccess={handleSuccess} />
+        </div>
+
+        {/* Trust badge */}
+        <div className="text-center mb-8 animate-bounce-in" style={{ animationDelay: "0.7s" }}>
+          <p className="text-sm sm:text-base text-gray-400 flex items-center justify-center gap-2 px-4">
+            <span className="text-neon-green text-lg">🔒</span>
+            <span>100% secure. We'll text your spin code the moment we go live.</span>
+          </p>
         </div>
 
         {/* Live ticker */}

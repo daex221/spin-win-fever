@@ -37,15 +37,31 @@ const SuccessState = ({ name, email, phone }: SuccessStateProps) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 py-8">
       <div className="w-full max-w-2xl mx-auto text-center space-y-6 md:space-y-8 animate-bounce-in">
+        {/* Large Brand Logo */}
+        <div className="mb-6 md:mb-8">
+          <div className="inline-block relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-60 blur-3xl transition-all duration-500 animate-glow-pulse" />
+            <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta animate-glow-pulse">
+              SUPPORTERS WIN
+            </h1>
+          </div>
+        </div>
+
         <div className="relative">
           <CheckCircle className="w-24 h-24 md:w-32 md:h-32 mx-auto text-neon-green animate-glow-pulse" />
           <div className="absolute inset-0 bg-neon-green/20 rounded-full blur-3xl" />
         </div>
 
         <div className="space-y-3 md:space-y-4 px-2">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-foreground animate-glow-pulse leading-tight">
-            🎉 YOU'RE IN, {name.toUpperCase()}!
-          </h1>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-foreground animate-glow-pulse leading-tight">
+            ✅ YOU'RE IN, {name.toUpperCase()}!
+          </h2>
+          <p className="text-xl sm:text-2xl md:text-3xl text-neon-cyan font-bold">
+            Welcome to Supporters Win.
+          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-neon-gold font-semibold italic">
+            Every spin. Every drop. Every win.
+          </p>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-neon-cyan font-bold">
             Your FREE SPIN CODE will be sent to your email and phone the moment SPIN WEEK launches!
           </p>
