@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { CheckCircle, Instagram, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CountdownTimer from "./CountdownTimer";
+import supportersWinLogo from "@/assets/supporters-win-logo.jpg";
 
 interface SuccessStateProps {
   name: string;
@@ -41,9 +42,11 @@ const SuccessState = ({ name, email, phone }: SuccessStateProps) => {
         <div className="mb-6 md:mb-8">
           <div className="inline-block relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-60 blur-3xl transition-all duration-500 animate-glow-pulse" />
-            <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta animate-glow-pulse">
-              SUPPORTERS WIN
-            </h1>
+            <img 
+              src={supportersWinLogo} 
+              alt="Supporters Win Logo" 
+              className="relative w-72 sm:w-96 md:w-[450px] lg:w-[550px] h-auto mx-auto"
+            />
           </div>
         </div>
 

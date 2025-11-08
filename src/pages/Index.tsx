@@ -4,6 +4,7 @@ import WaitlistForm from "@/components/WaitlistForm";
 import LiveTicker from "@/components/LiveTicker";
 import FloatingParticles from "@/components/FloatingParticles";
 import SuccessState from "@/components/SuccessState";
+import supportersWinLogo from "@/assets/supporters-win-logo.jpg";
 
 const Index = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -37,11 +38,12 @@ const Index = () => {
         {/* Brand Logo */}
         <div className="text-center mb-6 md:mb-8 animate-bounce-in">
           <div className="inline-block relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-50 blur-2xl group-hover:blur-3xl transition-all duration-500 animate-glow-pulse" />
-            <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta animate-glow-pulse">
-              SUPPORTERS WIN
-            </h1>
-            <p className="relative text-xs sm:text-sm text-gray-400 mt-2 tracking-widest">POWERED BY SUPPORTERS WIN™️</p>
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-50 blur-3xl group-hover:blur-3xl transition-all duration-500 animate-glow-pulse" />
+            <img 
+              src={supportersWinLogo} 
+              alt="Supporters Win Logo" 
+              className="relative w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto mx-auto"
+            />
           </div>
         </div>
 
