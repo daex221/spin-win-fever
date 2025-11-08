@@ -123,7 +123,7 @@ const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-neon-cyan" />
             <Input
               type="email"
-              placeholder="creator@example.com"
+              placeholder="Enter your email here"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
