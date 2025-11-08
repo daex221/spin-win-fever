@@ -4,6 +4,7 @@ import WaitlistForm from "@/components/WaitlistForm";
 import LiveTicker from "@/components/LiveTicker";
 import FloatingParticles from "@/components/FloatingParticles";
 import SuccessState from "@/components/SuccessState";
+import WheelTeaser from "@/components/WheelTeaser";
 import supportersWinLogo from "@/assets/supporters-win-logo.jpg";
 
 const Index = () => {
@@ -48,21 +49,61 @@ const Index = () => {
         </div>
 
         {/* Hero section */}
-        <div className="text-center space-y-5 md:space-y-7 mb-10 md:mb-14 animate-bounce-in max-w-5xl mx-auto" style={{ animationDelay: "0.1s" }}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan leading-tight px-4">
-            SPIN WEEK IS COMING 🔥
+        <div className="text-center space-y-6 md:space-y-8 mb-12 md:mb-16 animate-bounce-in max-w-5xl mx-auto" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta leading-tight px-4 tracking-tight">
+            SPIN. WIN. CLIMB. REPEAT.
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight px-4">
-            Win Cash, Prizes & Exclusive Creator Perks!
-          </h2>
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto my-6" />
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neon-cyan" style={{ animationDelay: "0.2s" }}>
+          
+          <p className="text-xl sm:text-2xl md:text-3xl text-foreground/90 max-w-3xl mx-auto px-4 leading-relaxed font-medium">
+            Over <span className="text-neon-gold font-bold">$27,430</span> in community prizes — and growing hourly.
+          </p>
+          
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto my-8" />
+        </div>
+
+        {/* Animated Wheel Teaser */}
+        <WheelTeaser />
+
+        {/* Community Prize Pool Section */}
+        <div className="max-w-4xl mx-auto mb-12 md:mb-16 px-4 animate-bounce-in" style={{ animationDelay: "0.3s" }}>
+          <div className="relative overflow-hidden rounded-3xl border-2 border-neon-gold/30 bg-gradient-to-br from-card via-card/80 to-card p-8 md:p-12 backdrop-blur-sm">
+            {/* Animated glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold/5 via-neon-cyan/5 to-neon-magenta/5 animate-pulse" />
+            
+            <div className="relative z-10 text-center space-y-6">
+              <div className="inline-block">
+                <div className="text-5xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-red animate-glow-pulse">
+                  $27,430
+                </div>
+                <div className="text-sm sm:text-base text-muted-foreground uppercase tracking-wider mt-2">
+                  Community Prize Pool
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-center gap-2 text-neon-green font-semibold text-lg sm:text-xl">
+                <span className="inline-block w-2 h-2 bg-neon-green rounded-full animate-pulse" />
+                Growing every hour
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed">
+                  🔥 <span className="font-bold text-neon-cyan">Join now</span> to help grow the pool — and claim your{" "}
+                  <span className="text-neon-gold font-bold">bonus spin</span> before it resets!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center space-y-4 mb-10 md:mb-12 animate-bounce-in max-w-3xl mx-auto px-4" style={{ animationDelay: "0.4s" }}>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neon-cyan">
             Be First to Play & Win Big
           </h3>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed" style={{ animationDelay: "0.3s" }}>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             Get early access to the Spin Wheel before public launch — earn bonuses, prizes, and exclusive creator tools.
           </p>
-          <p className="text-base sm:text-lg md:text-xl text-foreground max-w-2xl mx-auto px-4 leading-relaxed" style={{ animationDelay: "0.4s" }}>
+          <p className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed">
             Enter your details to get your{" "}
             <span className="text-neon-gold font-bold">FREE SPIN CODE</span> the moment we launch.
           </p>
@@ -72,12 +113,12 @@ const Index = () => {
         <CountdownTimer />
 
         {/* Waitlist form */}
-        <div className="mb-6 md:mb-8 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
+        <div className="mb-6 md:mb-8 animate-bounce-in" style={{ animationDelay: "0.5s" }}>
           <WaitlistForm onSuccess={handleSuccess} />
         </div>
 
         {/* Trust badge */}
-        <div className="text-center mb-10 md:mb-12 animate-bounce-in" style={{ animationDelay: "0.7s" }}>
+        <div className="text-center mb-10 md:mb-12 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
           <p className="text-sm sm:text-base text-muted-foreground flex items-center justify-center gap-2 px-4">
             <span className="text-neon-green text-lg">🔒</span>
             <span>100% secure. We'll text your spin code the moment we go live.</span>
@@ -88,7 +129,7 @@ const Index = () => {
         <LiveTicker />
 
         {/* Social proof badges */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-14 animate-bounce-in px-2" style={{ animationDelay: "0.8s" }}>
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-14 animate-bounce-in px-2" style={{ animationDelay: "0.7s" }}>
           <div className="px-5 md:px-7 py-3 md:py-4 bg-neon-green/10 border border-neon-green/30 rounded-full text-neon-green font-semibold text-sm md:text-base backdrop-blur-sm">
             🎁 100% FREE
           </div>
