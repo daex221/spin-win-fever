@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CountdownTimer from "@/components/CountdownTimer";
 import WaitlistForm from "@/components/WaitlistForm";
 import LiveTicker from "@/components/LiveTicker";
 import FloatingParticles from "@/components/FloatingParticles";
 import SuccessState from "@/components/SuccessState";
 import WheelTeaser from "@/components/WheelTeaser";
-import supportersWinLogo from "@/assets/supporters-win-logo.jpg";
+import supportersWinLogo from "@/assets/supporters-win-logo.png";
 
 const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [userData, setUserData] = useState({ name: "", email: "", phone: "" });
+  const [progress, setProgress] = useState(78);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        const increment = Math.random() * 0.5;
+        const newProgress = prev + increment;
+        return newProgress >= 100 ? 100 : newProgress;
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSuccess = (data: { name: string; email: string; phone: string }) => {
     setUserData(data);
@@ -152,10 +165,13 @@ const Index = () => {
         <div className="max-w-2xl mx-auto mt-8 md:mt-10 px-4">
           <div className="flex justify-between items-center mb-3">
             <span className="text-sm font-semibold text-muted-foreground">Waitlist Progress:</span>
-            <span className="text-sm font-bold text-neon-gold">78% FULL</span>
+            <span className="text-sm font-bold text-neon-gold">{Math.floor(progress)}% FULL</span>
           </div>
           <div className="h-2.5 bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
-            <div className="h-full w-[78%] bg-gradient-to-r from-neon-gold to-neon-red relative">
+            <div 
+              className="h-full bg-gradient-to-r from-neon-gold to-neon-red relative transition-all duration-1000 ease-out"
+              style={{ width: `${progress}%` }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
             </div>
           </div>
