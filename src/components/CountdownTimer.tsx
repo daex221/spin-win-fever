@@ -23,8 +23,9 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    // Fixed target date - November 14, 2025 at midnight UTC
-    const targetDate = new Date('2025-11-14T00:00:00Z');
+    // Target date is 7 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 7);
 
     const calculateTimeLeft = () => {
       const difference = targetDate.getTime() - new Date().getTime();

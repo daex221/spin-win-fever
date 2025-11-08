@@ -10,12 +10,13 @@ import supportersWinLogo from "@/assets/supporters-win-small-logo.jpg";
 const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [userData, setUserData] = useState({ name: "", email: "", phone: "" });
-  const [progress, setProgress] = useState(78);
+  const [progress, setProgress] = useState(40);
 
   useEffect(() => {
+    // Increment by ~15% per day (0.002% per 5 seconds on average)
     const interval = setInterval(() => {
       setProgress((prev) => {
-        const increment = Math.random() * 0.5;
+        const increment = Math.random() * 0.002;
         const newProgress = prev + increment;
         return newProgress >= 100 ? 100 : newProgress;
       });
