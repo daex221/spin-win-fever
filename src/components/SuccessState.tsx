@@ -39,13 +39,13 @@ const SuccessState = ({ name, email, phone }: SuccessStateProps) => {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 py-8">
       <div className="w-full max-w-2xl mx-auto text-center space-y-6 md:space-y-8 animate-bounce-in">
         {/* Large Brand Logo */}
-        <div className="mb-6 md:mb-8">
+        <div className="mb-8 md:mb-10">
           <div className="inline-block relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-60 blur-3xl transition-all duration-500 animate-glow-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-40 blur-2xl transition-all duration-500" />
             <img 
               src={supportersWinLogo} 
               alt="Supporters Win Logo" 
-              className="relative w-72 sm:w-96 md:w-[450px] lg:w-[550px] h-auto mx-auto"
+              className="relative w-56 sm:w-64 md:w-72 lg:w-80 h-auto mx-auto"
             />
           </div>
         </div>

@@ -36,31 +36,34 @@ const Index = () => {
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 lg:py-16">
         {/* Brand Logo */}
-        <div className="text-center mb-6 md:mb-8 animate-bounce-in">
+        <div className="text-center mb-8 md:mb-10 animate-bounce-in">
           <div className="inline-block relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-50 blur-3xl group-hover:blur-3xl transition-all duration-500 animate-glow-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-30 blur-2xl group-hover:opacity-40 transition-all duration-500" />
             <img 
               src={supportersWinLogo} 
               alt="Supporters Win Logo" 
-              className="relative w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto mx-auto"
+              className="relative w-48 sm:w-56 md:w-64 lg:w-72 h-auto mx-auto"
             />
           </div>
         </div>
 
         {/* Hero section */}
-        <div className="text-center space-y-4 md:space-y-6 mb-8 md:mb-12 animate-bounce-in" style={{ animationDelay: "0.1s" }}>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan animate-glow-pulse leading-tight">
-            SPIN WEEK IS COMING 🔥<br />
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Win Cash, Prizes & Exclusive Creator Perks!</span>
+        <div className="text-center space-y-5 md:space-y-7 mb-10 md:mb-14 animate-bounce-in max-w-5xl mx-auto" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-gold to-neon-cyan leading-tight px-4">
+            SPIN WEEK IS COMING 🔥
+          </h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight px-4">
+            Win Cash, Prizes & Exclusive Creator Perks!
           </h2>
-          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neon-cyan animate-glow-pulse" style={{ animationDelay: "0.2s" }}>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-neon-cyan to-transparent mx-auto my-6" />
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neon-cyan" style={{ animationDelay: "0.2s" }}>
             Be First to Play & Win Big
           </h3>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-2" style={{ animationDelay: "0.3s" }}>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed" style={{ animationDelay: "0.3s" }}>
             Get early access to the Spin Wheel before public launch — earn bonuses, prizes, and exclusive creator tools.
           </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-2 mt-3" style={{ animationDelay: "0.4s" }}>
-            Enter your name, email, and phone number to get your{" "}
+          <p className="text-base sm:text-lg md:text-xl text-foreground max-w-2xl mx-auto px-4 leading-relaxed" style={{ animationDelay: "0.4s" }}>
+            Enter your details to get your{" "}
             <span className="text-neon-gold font-bold">FREE SPIN CODE</span> the moment we launch.
           </p>
         </div>
@@ -69,13 +72,13 @@ const Index = () => {
         <CountdownTimer />
 
         {/* Waitlist form */}
-        <div className="mb-4 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
+        <div className="mb-6 md:mb-8 animate-bounce-in" style={{ animationDelay: "0.6s" }}>
           <WaitlistForm onSuccess={handleSuccess} />
         </div>
 
         {/* Trust badge */}
-        <div className="text-center mb-8 animate-bounce-in" style={{ animationDelay: "0.7s" }}>
-          <p className="text-sm sm:text-base text-gray-400 flex items-center justify-center gap-2 px-4">
+        <div className="text-center mb-10 md:mb-12 animate-bounce-in" style={{ animationDelay: "0.7s" }}>
+          <p className="text-sm sm:text-base text-muted-foreground flex items-center justify-center gap-2 px-4">
             <span className="text-neon-green text-lg">🔒</span>
             <span>100% secure. We'll text your spin code the moment we go live.</span>
           </p>
@@ -85,33 +88,35 @@ const Index = () => {
         <LiveTicker />
 
         {/* Social proof badges */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 md:mt-12 animate-bounce-in px-2" style={{ animationDelay: "0.8s" }}>
-          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-green/20 border-2 border-neon-green rounded-full text-neon-green font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-10 md:mt-14 animate-bounce-in px-2" style={{ animationDelay: "0.8s" }}>
+          <div className="px-5 md:px-7 py-3 md:py-4 bg-neon-green/10 border border-neon-green/30 rounded-full text-neon-green font-semibold text-sm md:text-base backdrop-blur-sm">
             🎁 100% FREE
           </div>
-          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-cyan/20 border-2 border-neon-cyan rounded-full text-neon-cyan font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
+          <div className="px-5 md:px-7 py-3 md:py-4 bg-neon-cyan/10 border border-neon-cyan/30 rounded-full text-neon-cyan font-semibold text-sm md:text-base backdrop-blur-sm">
             ⚡ INSTANT ACCESS
           </div>
-          <div className="px-4 md:px-6 py-2 md:py-3 bg-neon-magenta/20 border-2 border-neon-magenta rounded-full text-neon-magenta font-bold text-xs sm:text-sm md:text-base animate-glow-pulse">
+          <div className="px-5 md:px-7 py-3 md:py-4 bg-neon-magenta/10 border border-neon-magenta/30 rounded-full text-neon-magenta font-semibold text-sm md:text-base backdrop-blur-sm">
             🎯 LIMITED SPOTS
           </div>
         </div>
 
         {/* Urgency message */}
-        <div className="text-center mt-8 md:mt-12 px-4">
-          <p className="text-lg sm:text-xl md:text-2xl text-neon-red font-bold animate-glow-pulse">
+        <div className="text-center mt-10 md:mt-14 px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-neon-red font-bold">
             ⏰ Early access closes when the countdown hits zero
           </p>
         </div>
 
         {/* Fake progress bar */}
-        <div className="max-w-2xl mx-auto mt-6 md:mt-8 px-4">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-xs sm:text-sm font-bold text-gray-400">Waitlist Progress:</span>
-            <span className="text-xs sm:text-sm font-bold text-neon-gold">78% FULL</span>
+        <div className="max-w-2xl mx-auto mt-8 md:mt-10 px-4">
+          <div className="flex justify-between items-center mb-3">
+            <span className="text-sm font-semibold text-muted-foreground">Waitlist Progress:</span>
+            <span className="text-sm font-bold text-neon-gold">78% FULL</span>
           </div>
-          <div className="h-2 md:h-3 bg-muted rounded-full overflow-hidden">
-            <div className="h-full w-[78%] bg-gradient-to-r from-neon-gold to-neon-red animate-glow-pulse" />
+          <div className="h-2.5 bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
+            <div className="h-full w-[78%] bg-gradient-to-r from-neon-gold to-neon-red relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+            </div>
           </div>
         </div>
       </div>
