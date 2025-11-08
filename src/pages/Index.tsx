@@ -5,7 +5,7 @@ import LiveTicker from "@/components/LiveTicker";
 import FloatingParticles from "@/components/FloatingParticles";
 import SuccessState from "@/components/SuccessState";
 import WheelTeaser from "@/components/WheelTeaser";
-import supportersWinLogo from "@/assets/supporters-win-logo.png";
+import supportersWinLogo from "@/assets/supporters-win-small-logo.jpg";
 
 const Index = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -47,19 +47,17 @@ const Index = () => {
       {/* Floating particles */}
       <FloatingParticles />
 
+      {/* Logo in top left */}
+      <div className="fixed top-4 left-4 z-50">
+        <img 
+          src={supportersWinLogo} 
+          alt="Supporters Win Logo" 
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+        />
+      </div>
+
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 lg:py-16">
-        {/* Brand Logo */}
-        <div className="text-center mb-8 md:mb-10 animate-bounce-in">
-          <div className="inline-block relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-gold via-neon-cyan to-neon-magenta opacity-30 blur-2xl group-hover:opacity-40 transition-all duration-500" />
-            <img 
-              src={supportersWinLogo} 
-              alt="Supporters Win Logo" 
-              className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-auto mx-auto"
-            />
-          </div>
-        </div>
 
         {/* Hero section */}
         <div className="text-center space-y-6 md:space-y-8 mb-12 md:mb-16 animate-bounce-in max-w-5xl mx-auto" style={{ animationDelay: "0.1s" }}>
