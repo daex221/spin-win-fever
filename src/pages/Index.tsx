@@ -49,11 +49,11 @@ const Index = () => {
       <FloatingParticles />
 
       {/* Logo in top left */}
-      <div className="fixed top-4 left-4 z-50 animate-bounce-in">
+      <div className="fixed top-4 left-4 z-50">
         <img 
           src={supportersWinLogo} 
           alt="Supporters Win Logo" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300"
+          className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
         />
       </div>
 
