@@ -42,7 +42,7 @@ const Index = () => {
             <img 
               src={supportersWinLogo} 
               alt="Supporters Win Logo" 
-              className="relative w-48 sm:w-56 md:w-64 lg:w-72 h-auto mx-auto"
+              className="relative w-32 sm:w-40 md:w-48 lg:w-56 h-auto mx-auto"
             />
           </div>
         </div>

@@ -45,7 +45,7 @@ const SuccessState = ({ name, email, phone }: SuccessStateProps) => {
             <img 
               src={supportersWinLogo} 
               alt="Supporters Win Logo" 
-              className="relative w-56 sm:w-64 md:w-72 lg:w-80 h-auto mx-auto"
+              className="relative w-40 sm:w-48 md:w-56 lg:w-64 h-auto mx-auto"
             />
           </div>
         </div>
