@@ -160,6 +160,23 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Footer */}
+        <footer className="mt-16 md:mt-20 pt-8 border-t border-border/30">
+          <div className="text-center space-y-4 px-4">
+            <div className="text-sm text-muted-foreground">
+              Powered by <span className="font-semibold text-foreground">Supporters Win™️</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
+              <a href="#" className="hover:text-neon-cyan transition-colors">Privacy Policy</a>
+              <span>•</span>
+              <a href="#" className="hover:text-neon-cyan transition-colors">Terms of Service</a>
+            </div>
+            <div className="text-xs text-muted-foreground">
+              © 2025 Supporters Win. All rights reserved.
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
