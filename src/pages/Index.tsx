@@ -58,15 +58,6 @@ const Index = () => {
       {/* Floating particles */}
       <FloatingParticles />
 
-      {/* Logo in top left */}
-      <div className="fixed top-4 left-4 z-50">
-        <img 
-          src={supportersWinLogo} 
-          alt="Supporters Win Logo" 
-          className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-        />
-      </div>
-
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 lg:py-16">
 
@@ -193,6 +184,13 @@ const Index = () => {
         {/* Footer */}
         <footer className="mt-16 md:mt-20 pt-8 border-t border-border/30">
           <div className="text-center space-y-4 px-4">
+            <div className="flex justify-center mb-4">
+              <img 
+                src={supportersWinLogo} 
+                alt="Supporters Win Logo" 
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+              />
+            </div>
             <div className="text-sm text-muted-foreground">
               Powered by <span className="font-semibold text-foreground">Supporters Win™️</span>
             </div>
