@@ -58,11 +58,6 @@ All colors MUST be HSL.
     --glow-cyan: 0 0 20px hsla(180, 100%, 50%, 0.6);
     --glow-magenta: 0 0 20px hsla(328, 100%, 54%, 0.6);
     --glow-green: 0 0 25px hsla(134, 100%, 50%, 0.6);
-    
-    /* Enhanced shadows */
-    --shadow-neon-gold: 0 8px 32px hsla(45, 100%, 51%, 0.3), 0 0 80px hsla(45, 100%, 51%, 0.15);
-    --shadow-neon-cyan: 0 8px 32px hsla(180, 100%, 50%, 0.3), 0 0 80px hsla(180, 100%, 50%, 0.15);
-    --shadow-neon-multi: 0 8px 32px hsla(45, 100%, 51%, 0.2), 0 12px 48px hsla(180, 100%, 50%, 0.2), 0 0 120px hsla(328, 100%, 54%, 0.15);
   }
 }
 
