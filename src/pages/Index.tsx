@@ -13,10 +13,10 @@ const Index = () => {
   const [progress, setProgress] = useState(40);
 
   useEffect(() => {
-    // Increment by ~15% per day (0.002% per 5 seconds on average)
+    // Increment by ~12% per day to reach 100% in 5 days (0.0014% per 5 seconds on average)
     const interval = setInterval(() => {
       setProgress((prev) => {
-        const increment = Math.random() * 0.002;
+        const increment = Math.random() * 0.0014;
         const newProgress = prev + increment;
         return newProgress >= 100 ? 100 : newProgress;
       });
